@@ -71,7 +71,8 @@ class VideoViewController: ItemBaseController<VideoView>, WKNavigationDelegate {
             embeddedPlayButton.addTarget(self, action: #selector(playVideoInitially), for: UIControl.Event.touchUpInside)
 
             self.itemView.player = player
-        }        self.itemView.contentMode = .scaleAspectFill
+        }
+        self.itemView.contentMode = .scaleAspectFill
     }
     
     func createYTPlayer() -> WKWebView {

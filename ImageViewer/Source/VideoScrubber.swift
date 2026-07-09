@@ -117,7 +117,8 @@ open class VideoScrubber: UIControl {
         scrubber.maximumValue = 1000
         scrubber.value = 0
 
-        timeLabel.attributedText = NSAttributedString(string: "--:--", attributes: timeLabelAttributes)        timeLabel.textAlignment =  .center
+        timeLabel.attributedText = NSAttributedString(string: "--:--", attributes: timeLabelAttributes)
+        timeLabel.textAlignment =  .center
 
         playButton.addTarget(self, action: #selector(play), for: UIControl.Event.touchUpInside)
         pauseButton.addTarget(self, action: #selector(pause), for: UIControl.Event.touchUpInside)
@@ -251,7 +252,8 @@ open class VideoScrubber: UIControl {
             timeLabel.attributedText = NSAttributedString(string: timeString, attributes: timeLabelAttributes)
         }
         else {
-            timeLabel.attributedText = NSAttributedString(string: "--:--", attributes: timeLabelAttributes)        }
+            timeLabel.attributedText = NSAttributedString(string: "--:--", attributes: timeLabelAttributes)
+        }
     }
 
     func stringFromTimeInterval(_ interval:TimeInterval) -> String {
@@ -267,7 +269,7 @@ open class VideoScrubber: UIControl {
     }
     
     override open func tintColorDidChange() {
-        timeLabel.attributedText = NSAttributedString(string: "--:--", attributes: timeLabelAttributes)        
+        timeLabel.attributedText = NSAttributedString(string: "--:--", attributes: timeLabelAttributes)
         let playButtonImage = playButton.imageView?.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         playButton.imageView?.tintColor = self.tintColor
         playButton.setImage(playButtonImage, for: .normal)
